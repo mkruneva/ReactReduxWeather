@@ -1,1 +1,9 @@
-const API_KEY = '2f702572b36c4d6b91dd400c066a4e67';
+import { API_KEY } from '../const';
+
+export const FEATCH_WEATHER = 'FETCH_WEATHER';
+
+export function fetchWeather() {
+    return {
+        type: FETCH_WEATHER
+    }
+} 
