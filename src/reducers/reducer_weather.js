@@ -1,5 +1,7 @@
 import { FETCH_WEATHER } from '../actions/index';
 
+// the reducer handles the response from the ajax call made by the action
+
 export default function(state = [], action) {
     switch (action.type) {
         case FETCH_WEATHER: 
