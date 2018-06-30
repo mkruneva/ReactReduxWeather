@@ -7,15 +7,26 @@ class WeatherLst extends Component {
     renderWeather(cityData) {
         const name = cityData.city.name;
         const temps = cityData.list.map(one => one.main.temp);
-        const humidities = cityData.list.map(one => one.main.humidity);
         const pressures = cityData.list.map(one => one.main.pressure);
+        const humidities = cityData.list.map(one => one.main.humidity);
+
 
         return (
             <tr key={name}>
                 <td>{name}</td>
                 <td>
                     <Sparklines height={120} height={180} data={temps}>
+                        <SparklinesLine color="green" />
+                    </Sparklines>
+                </td>
+                <td>
+                    <Sparklines height={120} height={180} data={pressures}>
                         <SparklinesLine color="red" />
+                    </Sparklines>
+                </td>
+                <td>
+                    <Sparklines height={120} height={180} data={humidities}>
+                        <SparklinesLine color="blue" />
                     </Sparklines>
                 </td>
             </tr>
