@@ -5,7 +5,9 @@ import { connect }from 'react-redux';
 class WeatherLst extends Component {
     renderWeather(cityData) {
         return (
-            <tr><td>{cityData.city.name}</td></tr>
+            <tr key={cityData.city.name}>
+                <td>{cityData.city.name}</td>
+            </tr>
         )
     }
     render () {
