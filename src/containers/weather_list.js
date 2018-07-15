@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
+import Chart from '../components/chart';
 // import connect, define mapStatetoPros, pull data from props taken from state to container
 
 class WeatherLst extends Component {
@@ -14,21 +14,9 @@ class WeatherLst extends Component {
         return (
             <tr key={name}>
                 <td>{name}</td>
-                <td>
-                    <Sparklines height={120} height={180} data={temps}>
-                        <SparklinesLine color="green" />
-                    </Sparklines>
-                </td>
-                <td>
-                    <Sparklines height={120} height={180} data={pressures}>
-                        <SparklinesLine color="red" />
-                    </Sparklines>
-                </td>
-                <td>
-                    <Sparklines height={120} height={180} data={humidities}>
-                        <SparklinesLine color="blue" />
-                    </Sparklines>
-                </td>
+                <td><Chart data={temps} colour="green"/></td>
+                <td><Chart data={pressures} colour="red"/></td>
+                <td><Chart data={humidities} colour="blue"/></td>
             </tr>
         )
     }
